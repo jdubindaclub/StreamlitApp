@@ -21,7 +21,7 @@ column_order_out = list(schema['transformed_columns']['transformed_columns'])
 
 
 # SIDEBAR section
-st.sidebar.title('What you want bruv?')
+st.sidebar.title('New Customer Data')
 st.sidebar.info('Update these features to predict based on your customer')
 #collect input features
 options = {}
