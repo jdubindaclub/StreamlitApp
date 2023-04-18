@@ -6,7 +6,6 @@ import json
 from utils import transform_data
 from matplotlib import pyplot as plt
 import seaborn as sns
-from xgboost import XGBClassifier
 
 
 st.title('HW 5: Customer Churn Prediction')
