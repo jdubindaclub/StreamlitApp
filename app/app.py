@@ -52,9 +52,10 @@ for column, column_properties in schema['column_info'].items():
     
 #load model and encoder
 #model_path = os.path.join('..', 'models', 'experiment_1', 'xgb.pkl')
-model_path = ./app/xgb.pkl
+model_path = './app/xgb.pkl'
 with open(model_path, 'rb') as f:
     model = pickle.load(f)
+#model = pickle.load(open('xgb.pkl','rb'))
 
 encoder_path = os.path.join('..', 'models', 'experiment_1', 'encoder.pkl')
 with open(encoder_path, 'rb') as f:
