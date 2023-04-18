@@ -6,6 +6,7 @@ import json
 from utils import transform_data
 from matplotlib import pyplot as plt
 import seaborn as sns
+from xgboost import XGBClassifier
 
 
 st.title('HW 5: Customer Churn Prediction')
@@ -45,10 +46,11 @@ for column, column_properties in schema['column_info'].items():
 # model_path = os.path.join('..', 'models', 'experiment_1', 'xgb.pkl')
 # with open(model_path, 'rb') as f:
 #     model = pickle.load(f)
-MODEL_PATH = 'xgb.pkl'
-# load model from file
-with open(MODEL_PATH, 'rb') as f:
-    model = pickle.load(f)
+
+X_train = pd.read_csv('X_train.csv')
+y_train = pd.read_csv('y_train.csv')
+model = XGBClassifier(max_depth=9, n_estimators=50)
+model.fit(X_train, y_train)
 
 encoder_path = os.path.join('..', 'models', 'experiment_1', 'encoder.pkl')
 with open(encoder_path, 'rb') as f:
