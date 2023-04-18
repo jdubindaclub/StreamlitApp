@@ -43,14 +43,9 @@ for column, column_properties in schema['column_info'].items():
         options[column] = st.sidebar.selectbox(column, column_properties['values'])
     
 #load model and encoder
-# model_path = os.path.join('..', 'models', 'experiment_1', 'xgb.pkl')
-# with open(model_path, 'rb') as f:
-#     model = pickle.load(f)
-
-X_train = pd.read_csv('X_train.csv')
-y_train = pd.read_csv('y_train.csv')
-model = XGBClassifier(max_depth=9, n_estimators=50)
-model.fit(X_train, y_train)
+model_path = os.path.join('..', 'models', 'experiment_1', 'xgb.pkl')
+with open(model_path, 'rb') as f:
+    model = pickle.load(f)
 
 encoder_path = os.path.join('..', 'models', 'experiment_1', 'encoder.pkl')
 with open(encoder_path, 'rb') as f:
