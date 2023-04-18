@@ -7,6 +7,15 @@ from utils import transform_data
 from matplotlib import pyplot as plt
 import seaborn as sns
 
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('xgbclass', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+filename = file_selector()
+st.write('You selected `%s`' % filename)
+
+
 
 st.title('HW 5: Customer Churn Prediction')
 st.header('Use the sidebar to update the features about your client and press the \'Predict\' button see if they will churn. All predictions are logged in the \"Historical Outcomes\" table below.')
